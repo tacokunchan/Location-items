@@ -37,3 +37,15 @@ export async function deleteSearchLog(id: string): Promise<void> {
   const db = await getDb();
   await db.delete('searchLogs', id);
 }
+
+// Lets the user dismiss a whole "wanted" group at once (e.g. a one-off typo
+// that isn't worth registering an item for).
+export async function deleteLogsForQuery(query: string): Promise<void> {
+  const db = await getDb();
+  const all = await db.getAll('searchLogs');
+  const tx = db.transaction('searchLogs', 'readwrite');
+  await Promise.all(
+    all.filter((log) => log.query === query).map((log) => tx.store.delete(log.id)),
+  );
+  await tx.done;
+}
