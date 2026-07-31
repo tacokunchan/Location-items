@@ -6,6 +6,7 @@ import { ItemEditPage } from './pages/ItemEditPage';
 import { ItemDetailPage } from './pages/ItemDetailPage';
 import { WantedPage } from './pages/WantedPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { QuizPage } from './pages/QuizPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/items/:id" element={<ItemDetailPage />} />
             <Route path="/items/:id/edit" element={<ItemEditPage />} />
             <Route path="/wanted" element={<WantedPage />} />
+            <Route path="/quiz" element={<QuizPage />} />
             <Route path="/settings" element={<SettingsPage />} />
           </Routes>
         </div>

@@ -11,7 +11,7 @@ import { ItemGrid } from '../components/home/ItemGrid';
 import { SearchResults } from '../components/home/SearchResults';
 import { EmptySearchState } from '../components/home/EmptySearchState';
 import { Fab } from '../components/home/Fab';
-import { SettingsIcon, ListIcon } from '../components/common/Icon';
+import { SettingsIcon, ListIcon, HelpCircleIcon } from '../components/common/Icon';
 
 export function HomePage() {
   const { items, locations, lastExportAt, refresh } = useAppData();
@@ -40,6 +40,9 @@ export function HomePage() {
       <div className="mb-4 flex items-center justify-between">
         <h1 className="text-lg font-semibold">モノの場所</h1>
         <div className="flex items-center gap-1">
+          <Link to="/quiz" aria-label="思い出しクイズ" className="flex h-11 w-11 items-center justify-center rounded-full text-neutral-500">
+            <HelpCircleIcon className="h-5 w-5" />
+          </Link>
           <Link to="/wanted" aria-label="探しものログ" className="flex h-11 w-11 items-center justify-center rounded-full text-neutral-500">
             <ListIcon className="h-5 w-5" />
           </Link>
