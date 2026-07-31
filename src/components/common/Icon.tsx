@@ -153,6 +153,16 @@ export function SettingsIcon(props: IconProps) {
   );
 }
 
+export function HelpCircleIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.5 9.2a2.5 2.5 0 014.9.8c0 1.7-2.4 2-2.4 3.7" />
+      <circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export function ListIcon(props: IconProps) {
   return (
     <svg {...base(props)}>
